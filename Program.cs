@@ -10,11 +10,10 @@ class Program
     System.Console.WriteLine(string.Join(",",comps));
 }
 }
-
 public interface IRobot
 {
     string GetInfo(){throw new NotImplementedException();}
-    List<object> GetComponents();
+    List<string> GetComponents();
     string GetRobotType()
     {
         return "I am a simple robot.";
@@ -34,8 +33,8 @@ public interface IFlyingRobot:IRobot
 }
 class Quadrocopter:IFlyingRobot,IChargeable
 {
-  List<object> _components = new List<object> {"rotor1","rotor2","rotor3","rotor4"};
-    public List<object> GetComponents()
+  List<string> _components = new() {"rotor1","rotor2","rotor3","rotor4"};
+    public List<string> GetComponents()
     {
         return _components;
     }
